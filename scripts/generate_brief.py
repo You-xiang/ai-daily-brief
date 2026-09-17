@@ -112,7 +112,8 @@ def build_html(brief_text, news_items, date_str):
             elif re.match(r"^[-*•]\s", line):
                 out.append(f"<li>{esc(line.lstrip('-*• '))}</li>")
             elif re.match(r"^\d+[.、]\s*", line):
-                out.append(f"<li>{esc(re.sub(r'^\\d+[.、]\\s*', '', line))}</li>")
+                cleaned = re.sub(r"^\d+[.、]\s*", "", line)
+                out.append("<li>" + esc(cleaned) + "</li>")
             else:
                 out.append(f"<p>{esc(line)}</p>")
         return "\n".join(out)
