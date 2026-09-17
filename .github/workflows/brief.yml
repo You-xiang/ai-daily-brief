@@ -30,8 +30,8 @@ jobs:
 
       - name: Push notification (optional)
         env:
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
-          PUSH_URL: ${{ secrets.PUSH_URL }}
+          SC_KEY: ${{ secrets.SC_KEY }}
+          PAGE_URL: ${{ secrets.PAGE_URL }}
         run: python scripts/push_notify.py
 
       - name: Commit updated brief
