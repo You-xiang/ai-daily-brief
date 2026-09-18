@@ -42,7 +42,7 @@ def main():
     with open(brief_path, encoding="utf-8") as f:
         brief = f.read()
 
-    page_url = os.environ.get("PAGE_URL", "https://you-xiang.github.io/ai-daily-brief/")
+    page_url = os.environ.get("PAGE_URL") or "https://you-xiang.github.io/ai-daily-brief/"
     date_str = datetime.datetime.now(
         datetime.timezone(datetime.timedelta(hours=8))
     ).strftime("%m-%d")
